@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Design Gráfico Online | Photoshop, Illustrator, CorelDRAW e Mais – Cyber Informática</title>
+    <meta name="description" content="Curso de Design Gráfico Online Completo com Photoshop, Illustrator, CorelDRAW, InDesign e 3Ds Max. Acesso por 1 ano, certificado incluso, 100% EAD. Matricule-se na Cyber Informática.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://i.postimg.cc/GhKz2tLJ/logo-64x64.png" type="image/png">
+    
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+    <style>
+        :root {
+            --royal-blue: #1a4d8f;
+            --cyan: #00b7d4;
+            --white: #ffffff;
+            --dark-bg: #0a0e17;
+            --light-bg: #121a2b;
+            --gray: #b0b7c3;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--dark-bg);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 2.5rem;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--cyan);
+            border-radius: 2px;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            color: var(--gray);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 16px 40px;
+            background: linear-gradient(90deg, var(--royal-blue), var(--cyan));
+            color: var(--white);
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            text-align: center;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 20px rgba(0, 183, 212, 0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(0, 183, 212, 0.5);
+        }
+        
+        .btn-lg {
+            padding: 18px 50px;
+            font-size: 1.2rem;
+        }
+        
+        .floating-cta {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(0, 183, 212, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(0, 183, 212, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 183, 212, 0); }
+        }
+        
+        /* Header */
+        header {
+            background: rgba(10, 14, 23, 0.9);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            height: 50px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 180px 0 100px;
+            background: radial-gradient(circle at top right, rgba(26, 77, 143, 0.3) 0%, rgba(10, 14, 23, 0) 50%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 3.2rem;
+            background: linear-gradient(90deg, var(--white), var(--cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.4rem;
+            max-width: 800px;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 2.5rem;
+        }
+        
+        .highlight {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+        }
+        
+        .hero-image {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            width: 45%;
+            max-width: 600px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            opacity: 0.95;
+            z-index: 1;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Sections */
+        section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-bg {
+            background: var(--light-bg);
+        }
+        
+        /* What You'll Learn */
+        .modules {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .module-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 30px;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .module-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--cyan);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .module-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--cyan);
+        }
+        
+        .course-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .hours, .lessons {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.9rem;
+            color: var(--cyan);
+        }
+        
+        .course-description {
+            margin-bottom: 15px;
+        }
+        
+        /* For Whom */
+        .audience {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .audience-item {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+        
+        .audience-icon {
+            background: var(--royal-blue);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.5rem;
+        }
+        
+        /* Benefits */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+        
+        .benefit-card {
+            padding: 30px 20px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.03);
+            transition: var(--transition);
+        }
+        
+        .benefit-card:hover {
+            background: rgba(26, 77, 143, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        .benefit-icon {
+            font-size: 2.5rem;
+            color: var(--cyan);
+            margin-bottom: 20px;
+        }
+        
+        /* Pricing */
+        .pricing {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .price {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin: 30px 0;
+            color: var(--cyan);
+        }
+        
+        .price small {
+            font-size: 1.2rem;
+            color: var(--gray);
+        }
+        
+        .installments {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            color: var(--gray);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 30px;
+            border-radius: 10px;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 5rem;
+            color: var(--royal-blue);
+            opacity: 0.3;
+            font-family: serif;
+            line-height: 1;
+        }
+        
+        .testimonial-content {
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--royal-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+        
+        .author-info h4 {
+            margin-bottom: 5px;
+            color: var(--cyan);
+        }
+        
+        .author-info p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: #05080f;
+            padding: 70px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-logo {
+            height: 60px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--cyan);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--cyan);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        /* Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-image {
+                position: relative;
+                width: 100%;
+                max-width: 100%;
+                transform: none;
+                margin-top: 50px;
+            }
+            
+            h1 {
+                font-size: 2.3rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 150px 0 60px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            section {
+                padding: 70px 0;
+            }
+            
+            .price {
+                font-size: 2.8rem;
+            }
+            
+            .floating-cta {
+                bottom: 10px;
+                right: 10px;
+                left: 10px;
+                width: calc(100% - 20px);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .highlight {
+                font-size: 0.8rem;
+                padding: 6px 12px;
+            }
+            
+            .btn {
+                padding: 14px 30px;
+                font-size: 1rem;
+            }
+            
+            .btn-lg {
+                padding: 15px 30px;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Facebook Pixel -->
+    <!-- Insert your Pixel ID here -->
+    <!-- <script>...Facebook Pixel code...</script> -->
+
+    <!-- Google Analytics -->
+    <!-- Insert GA4 tag here -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script> -->
+    <!-- <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-XXXXXXX');</script> -->
+    
+    <!-- Botão de CTA Flutuante -->
+    <div class="floating-cta">
+        <a href="https://www.cyberinformaticaead.com.br/c/BWDYTV5BZE" class="btn btn-lg">QUERO ME INSCREVER AGORA!</a>
+    </div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo-container">
+                <img src="https://i.postimg.cc/9QSMtPXm/logo-450x180.png" alt="Cyber Informática" class="logo">
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="animate-on-scroll">Domine os Softwares Criativos e Faça do Design sua Profissão!</h1>
+                <p class="hero-subtitle animate-on-scroll">Aprenda Photoshop, Illustrator, CorelDRAW, InDesign, 3Ds Max e muito mais em um único pacote completo.</p>
+                
+                <div class="hero-highlights animate-on-scroll">
+                    <div class="highlight">✅ Curso 100% Online</div>
+                    <div class="highlight">📜 Certificado incluso</div>
+                    <div class="highlight">🎓 Acesso por 1 ano</div>
+                    <div class="highlight">🎁 Sorteio de iPhone, notebook e mais!</div>
+                </div>
+                
+                <a href="https://www.cyberinformaticaead.com.br/c/BWDYTV5BZE" class="btn btn-lg animate-on-scroll">QUERO ME INSCREVER AGORA!</a>
+            </div>
+        </div>
+        
+        <div class="hero-image animate-on-scroll">
+            <img src="https://i.postimg.cc/rppQrryN/Mercado-de-trabalho-para-designer-gr-fico.png" alt="Aluno criando design gráfico">
+        </div>
+    </section>
+    
+    <!-- O que você vai aprender -->
+    <section class="section-bg">
+        <div class="container">
+            <div class="section-title">
+                <h2>O que você vai aprender</h2>
+            </div>
+            
+            <div class="modules">
+                <!-- Design e Composição Visual -->
+                <div class="module-card animate-on-scroll">
+                    <h3>Design e Composição Visual</h3>
+                    <p class="course-description">Fundamentos do design, teoria das cores, tipografia e composição visual para criar peças impactantes.</p>
+                </div>
+                
+                <!-- Adobe Photoshop CC -->
+                <div class="module-card animate-on-scroll">
+                    <h3>Adobe Photoshop CC</h3>
+                    <p class="course-description">Domine o Photoshop para edição de fotos, criação de artes digitais, manipulação de imagens e muito mais.</p>
+                    <div class="course-meta">
+                        <div class="hours">⏱️ 30.0 Hora(s)</div>
+                        <div class="lessons">📚 20 Aula(s)</div>
+                    </div>
+                </div>
+                
+                <!-- Adobe Illustrator CC -->
+                <div class="module-card animate-on-scroll">
+                    <h3>Adobe Illustrator CC</h3>
+                    <p class="course-description">O Adobe Illustrator é um software de design baseado em vetor. Suas imagens podem ser reduzidas para telas de dispositivos móveis ou ampliadas para preencherem um outdoor sem perder qualidade.</p>
+                    <div class="course-meta">
+                        <div class="hours">⏱️ 24.0 Hora(s)</div>
+                        <div class="lessons">📚 16 Aula(s)</div>
+                    </div>
+                </div>
+                
+                <!-- CorelDRAW X8 -->
+                <div class="module-card animate-on-scroll">
+                    <h3>CorelDRAW X8</h3>
+                    <p class="course-description">Combine sua criatividade com o poder do CorelDRAW para desenvolver gráficos, layouts, editar fotos e criar sites. Ideal para logotipos, brochuras e projetos originais.</p>
+                    <div class="course-meta">
+                        <div class="hours">⏱️ 30.0 Hora(s)</div>
+                        <div class="lessons">📚 20 Aula(s)</div>
+                    </div>
+                </div>
+                
+                <!-- 3Ds Max 2020 -->
+                <div class="module-card animate-on-scroll">
+                    <h3>3Ds Max 2020</h3>
+                    <p class="course-description">Programa de computação gráfica para animação 3D, modelagem 3D e maquete eletrônica. O mais popular para animações de personagens e desenho animado.</p>
+                    <div class="course-meta">
+                        <div class="hours">⏱️ 30.0 Hora(s)</div>
+                        <div class="lessons">📚 20 Aula(s)</div>
+                    </div>
+                </div>
+                
+                <!-- Adobe InDesign CS6 -->
+                <div class="module-card animate-on-scroll">
+                    <h3>Adobe InDesign CS6</h3>
+                    <p class="course-description">Software para diagramação e organização de páginas, criado para substituir o Adobe PageMaker. Ideal para criação de jornais, revistas, embalagens e materiais de marketing.</p>
+                    <div class="course-meta">
+                        <div class="hours">⏱️ 18.0 Hora(s)</div>
+                        <div class="lessons">📚 12 Aula(s)</div>
+                    </div>
+                </div>
+                
+                <!-- Dicas de Freelance e Mercado -->
+                <div class="module-card animate-on-scroll">
+                    <h3>Dicas de Freelance e Mercado</h3>
+                    <p class="course-description">Estratégias para conseguir clientes, precificar serviços e construir uma carreira de sucesso no mercado criativo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Para quem é esse curso? -->
+    <section>
+        <div class="container">
+            <div class="section-title">
+                <h2>Para quem é esse curso?</h2>
+            </div>
+            
+            <div class="audience">
+                <div class="audience-item animate-on-scroll">
+                    <div class="audience-icon">👤</div>
+                    <div>
+                        <h3>Iniciantes no design gráfico</h3>
+                        <p>Comece do zero e construa uma base sólida para sua carreira criativa.</p>
+                    </div>
+                </div>
+                
+                <div class="audience-item animate-on-scroll">
+                    <div class="audience-icon">🎓</div>
+                    <div>
+                        <h3>Estudantes ou curiosos</h3>
+                        <p>Para quem quer entrar no mercado criativo e transformar paixão em profissão.</p>
+                    </div>
+                </div>
+                
+                <div class="audience-item animate-on-scroll">
+                    <div class="audience-icon">💼</div>
+                    <div>
+                        <h3>Profissionais em atualização</h3>
+                        <p>Atualize seus conhecimentos e aprenda novas ferramentas e técnicas.</p>
+                    </div>
+                </div>
+                
+                <div class="audience-item animate-on-scroll">
+                    <div class="audience-icon">💰</div>
+                    <div>
+                        <h3>Freelancers ou CLT</h3>
+                        <p>Para quem quer ganhar dinheiro com design, seja como freelancer ou funcionário.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Benefícios extras -->
+    <section class="section-bg">
+        <div class="container">
+            <div class="section-title">
+                <h2>Benefícios exclusivos</h2>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card animate-on-scroll">
+                    <div class="benefit-icon">📜</div>
+                    <h3>Certificado digital</h3>
+                    <p>Com validade nacional para comprovar suas habilidades.</p>
+                </div>
+                
+                <div class="benefit-card animate-on-scroll">
+                    <div class="benefit-icon">🛠️</div>
+                    <h3>Suporte técnico</h3>
+                    <p>Equipe especializada para tirar todas as suas dúvidas.</p>
+                </div>
+                
+                <div class="benefit-card animate-on-scroll">
+                    <div class="benefit-icon">⏱️</div>
+                    <h3>Acesso total por 12 meses</h3>
+                    <p>Estude no seu ritmo e reveja as aulas quantas vezes quiser.</p>
+                </div>
+                
+                <div class="benefit-card animate-on-scroll">
+                    <div class="benefit-icon">🎁</div>
+                    <h3>Sorteios exclusivos</h3>
+                    <p>Participe automaticamente de sorteios de iPhone, notebooks, fones e cursos grátis!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Valor e Pagamento -->
+    <section>
+        <div class="container">
+            <div class="pricing">
+                <div class="section-title">
+                    <h2>Investimento no seu futuro</h2>
+                </div>
+                
+                <div class="price animate-on-scroll">R$ 2.997,00 <small>à vista</small></div>
+                <p class="installments animate-on-scroll">Ou 12x de R$ 249,75 sem juros</p>
+                
+                <div class="animate-on-scroll">
+                    <a href="https://www.cyberinformaticaead.com.br/c/BWDYTV5BZE" class="btn btn-lg">QUERO GARANTIR MINHA VAGA AGORA!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Depoimentos -->
+    <section class="section-bg">
+        <div class="container">
+            <div class="section-title">
+                <h2>O que nossos alunos dizem</h2>
+            </div>
+            
+            <div class="testimonials">
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-content">
+                        <p>"Com esse curso entrei no meu primeiro trabalho como designer! As aulas são práticas e os projetos reais fazem toda a diferença no portfólio."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">A</div>
+                        <div class="author-info">
+                            <h4>Ana Luiza</h4>
+                            <p>Rio de Janeiro</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-content">
+                        <p>"Muito completo, adorei os exercícios e a parte de projetos. Em 6 meses já estava aplicando tudo que aprendi em trabalhos profissionais."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">L</div>
+                        <div class="author-info">
+                            <h4>Lucas Andrade</h4>
+                            <p>São Paulo</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-content">
+                        <p>"Já faço freelance com os conhecimentos que aprendi aqui. O curso se pagou em menos de 2 meses com os trabalhos que consegui."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">K</div>
+                        <div class="author-info">
+                            <h4>Karine Silva</h4>
+                            <p>Pernambuco</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <img src="https://i.postimg.cc/9QSMtPXm/logo-450x180.png" alt="Cyber Informática" class="footer-logo">
+                    <p>Transformando paixão por tecnologia em carreiras de sucesso desde 2005.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="https://www.cyberinformaticaead.com.br/politica-privacidade">Política de Privacidade</a></li>
+                        <li><a href="https://www.cyberinformaticaead.com.br/politica-privacidade">Termos de Uso</a></li>
+                        <li><a href="https://www.cyberinformaticaead.com.br/sobre">Sobre</a></li>
+                        <li><a href="https://www.cyberinformaticaead.com.br/contato">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Contato</h3>
+                    <ul>
+                        <li>Email: contato@cyberinformatica.com</li>
+                        <li>Telefone: (98) 98505-1656</li>
+                        <li>Horário: Seg-Sex, 8h às 12h - 14h às 17h</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Cyber Informática. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Animação ao rolar a página
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            document.querySelectorAll('.animate-on-scroll').forEach(element => {
+                observer.observe(element);
+            });
+            
+            // Botão flutuante para mobile
+            const floatingBtn = document.querySelector('.floating-cta');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    floatingBtn.style.display = 'block';
+                } else {
+                    floatingBtn.style.display = 'block'; // Sempre visível
+                }
+            });
+        });
+    </script>
+</body>
+</html>
